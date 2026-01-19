@@ -1,0 +1,189 @@
+import L from 'leaflet';
+
+interface RunicInscription {
+  id?: string;
+  signum?: string;
+  name?: string;
+  location?: string;
+  country?: string;
+  landscape?: string;
+  period?: string;
+  status?: string;
+  object_type?: string;
+  dating?: string;
+  latitude?: number;
+  longitude?: number;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
+}
+
+const getPeriodColor = (period?: string): string => {
+  if (!period) return '#6b7280'; // gray-500
+  const p = period.toLowerCase();
+  if (p.includes('urnordisk')) return '#a855f7'; // purple-500
+  if (p.includes('vendel')) return '#3b82f6'; // blue-500
+  if (p.includes('viking')) return '#22c55e'; // green-500
+  if (p.includes('medeltid')) return '#f97316'; // orange-500
+  return '#6b7280'; // gray-500
+};
+
+const createRuneIcon = (inscription: RunicInscription): L.DivIcon => {
+  const color = getPeriodColor(inscription.period);
+  const iconHtml = `
+    <div style="
+      background-color: ${color};
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      font-family: sans-serif;
+      cursor: pointer;
+    ">
+      ᛘ
+    </div>
+  `;
+
+  return L.divIcon({
+    html: iconHtml,
+    className: 'custom-rune-icon',
+    iconSize: [24, 24],
+    iconAnchor: [12, 24],
+    popupAnchor: [0, -24],
+  });
+};
+
+export const addRunicInscriptionMarkers = (
+  map: L.Map,
+  inscriptions: RunicInscription[],
+  onMarkerClick?: (inscription: RunicInscription) => void
+): L.Marker[] => {
+  console.log(`🗺️ addRunicInscriptionMarkers called with ${inscriptions.length} inscriptions`);
+  
+  // Debug: Log structure of first few inscriptions
+  console.log('📊 Sample inscription data for markers:', inscriptions.slice(0, 5).map(i => ({
+    signum: i.signum,
+    hasCoordinates: !!i.coordinates,
+    hasLatLng: !!i.latitude && !!i.longitude,
+    coordinates: i.coordinates,
+    lat: i.latitude,
+    lng: i.longitude,
+    location: i.location
+  })));
+
+  const markers: L.Marker[] = [];
+  let validCoordinatesCount = 0;
+  let invalidCoordinatesCount = 0;
+
+  inscriptions.forEach((inscription) => {
+    let lat: number | undefined;
+    let lng: number | undefined;
+
+    // Extract coordinates from various possible formats
+    if (inscription.coordinates) {
+      lat = inscription.coordinates.lat;
+      lng = inscription.coordinates.lng;
+      console.log(`📍 Using coordinates field for ${inscription.signum}: [${lat}, ${lng}]`);
+    } else if (inscription.latitude && inscription.longitude) {
+      lat = inscription.latitude;
+      lng = inscription.longitude;
+      console.log(`📍 Using lat/lng fields for ${inscription.signum}: [${lat}, ${lng}]`);
+    }
+
+    if (lat && lng && !isNaN(lat) && !isNaN(lng)) {
+      validCoordinatesCount++;
+      
+      // Create rune-based icon
+      const icon = createRuneIcon(inscription);
+      
+      try {
+        console.log(`🎯 Creating marker for ${inscription.signum} at [${lat}, ${lng}]`);
+        
+        const marker = L.marker([lat, lng], { icon, riseOnHover: true })
+          .addTo(map);
+
+        // Enhanced popup content with better formatting
+        const popupContent = `
+          <div class="runic-popup min-w-[200px]">
+            <div class="popup-header bg-slate-800 text-white p-2 rounded-t">
+              <h3 class="font-bold text-sm">${inscription.signum || 'Unknown'}</h3>
+              ${inscription.name ? `<p class="text-xs text-slate-300">${inscription.name}</p>` : ''}
+            </div>
+            <div class="popup-content bg-white p-2 rounded-b">
+              ${inscription.location ? `<p class="text-xs mb-1"><strong>Plats:</strong> ${inscription.location}</p>` : ''}
+              ${inscription.country ? `<p class="text-xs mb-1"><strong>Land:</strong> ${inscription.country}</p>` : ''}
+              ${inscription.landscape ? `<p class="text-xs mb-1"><strong>Landskap:</strong> ${inscription.landscape}</p>` : ''}
+              ${inscription.period ? `<p class="text-xs mb-1"><strong>Period:</strong> ${inscription.period}</p>` : ''}
+              ${inscription.status ? `<p class="text-xs mb-1"><strong>Status:</strong> ${inscription.status}</p>` : ''}
+              ${inscription.object_type ? `<p class="text-xs mb-1"><strong>Objekttyp:</strong> ${inscription.object_type}</p>` : ''}
+              ${inscription.dating ? `<p class="text-xs mb-1"><strong>Datering:</strong> ${inscription.dating}</p>` : ''}
+              <p class="text-xs mb-1"><strong>Koordinater:</strong> ${lat.toFixed(4)}, ${lng.toFixed(4)}</p>
+            </div>
+          </div>
+        `;
+        
+        marker.bindPopup(popupContent, {
+          maxWidth: 300,
+          className: 'runic-inscription-popup'
+        });
+
+        if (onMarkerClick) {
+          marker.on('click', () => {
+            console.log(`🖱️ Marker clicked for ${inscription.signum}`);
+            onMarkerClick({
+              id: inscription.id,
+              signum: inscription.signum,
+              name: inscription.name,
+              location: inscription.location,
+              country: inscription.country,
+              landscape: inscription.landscape,
+              period: inscription.period,
+              status: inscription.status,
+              object_type: inscription.object_type,
+              dating: inscription.dating,
+              latitude: lat,
+              longitude: lng,
+              coordinates: { lat, lng }
+            });
+          });
+        }
+
+        markers.push(marker);
+        
+        console.log(`✅ Successfully added marker for ${inscription.signum} at [${lat}, ${lng}]`);
+      } catch (error) {
+        console.error(`❌ Error creating marker for ${inscription.signum}:`, error);
+        invalidCoordinatesCount++;
+      }
+    } else {
+      invalidCoordinatesCount++;
+      if (invalidCoordinatesCount <= 5) {
+        console.log(`❌ No valid coordinates for ${inscription.signum}: lat=${lat}, lng=${lng}`);
+      }
+    }
+  });
+
+  console.log(`📍 Marker creation summary:`);
+  console.log(`  - Total inscriptions processed: ${inscriptions.length}`);
+  console.log(`  - Valid coordinates found: ${validCoordinatesCount}`);
+  console.log(`  - Invalid/missing coordinates: ${invalidCoordinatesCount}`);
+  console.log(`  - Markers added to map: ${markers.length}`);
+
+  // Force map to refresh/redraw
+  if (map && markers.length > 0) {
+    console.log(`🔄 Forcing map refresh after adding ${markers.length} markers`);
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 100);
+  }
+
+  return markers;
+};

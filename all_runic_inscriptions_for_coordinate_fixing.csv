@@ -1,0 +1,223 @@
+id,signum,location,parish,province,country,municipality,county,landscape,longitude,latitude,coordinate_status,comment
+307307f9-1637-4872-9abd-b0648864bfe6,DK Bh 1,Klemensker,Klemensker,Bornholm,Danmark,,,,14.7494,55.1892,HAS_COORDINATES,COORDS_OK
+9848ec9f-1879-4925-8390-f07355a416db,DK Bh 10,Rutsker,,Bornholm,Danmark,,,14.6722,55.2528,HAS_COORDINATES,COORDS_OK
+eae6159b-bf63-41c7-8642-22c112bb0816,DK Bh 12,Rø,Rø,Bornholm,Danmark,,,,14.7069,55.2,HAS_COORDINATES,COORDS_OK
+b75b1f7f-e24b-42f5-8c98-d980dc0efe2a,DK Bh 13,Bodilsker,Bodilsker,Bornholm,Danmark,,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+1c95f081-98b7-4bfb-adc9-123f3010e0e1,DK Bh 15,Bodilsker,Bodilsker,Bornholm,Danmark,,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+e1283512-fe73-4ab2-929d-2b537dad4e5f,DK Bh 16,Bodilsker,Bodilsker,Bornholm,Danmark,,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+1de95944-ecc2-47d9-ba8d-d91f231fdfc1,DK Bh 17,Bodilsker,Bodilsker,Bornholm,Danmark,,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+a42f41b0-529c-4677-b148-d204e7a07020,DK Bh 2,Allinge,Allinge,Bornholm,Danmark,,,,14.7938,55.2219,HAS_COORDINATES,COORDS_OK
+c4521ca9-e21a-4f7f-bec0-268b977f1430,DK Bh 27,Åkirkeby,Åkirkeby,Bornholm,Danmark,,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+201900c3-0eed-4505-aa32-1135e4f7d028,DK Bh 28,Åkirkeby,Åkirkeby,Bornholm,Danmark,,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+6d2986cc-77b7-4ded-a09a-dc436caa7c63,DK Bh 29,Åkirkeby,Åkirkeby,Bornholm,Danmark,,,,14.9296,55.062717,HAS_COORDINATES,COORDS_OK
+4ca2027c-d83a-4038-9b44-8fb47092fefc,DK Bh 3,Hasle,Hasle,Bornholm,Danmark,,,,14.73301,55.177208,HAS_COORDINATES,COORDS_OK
+08fedbdf-fb66-42bc-957d-bffb1de96ae2,DK Bh 30,Åkirkeby,Åkirkeby,Bornholm,Danmark,,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+d93d91ee-2ab7-46c9-b42e-620823b6367c,DK Bh 31,Nyker,Nyker,Bornholm,Danmark,,,14.7417,55.1778,HAS_COORDINATES,COORDS_OK
+f57d231e-0861-47ef-825a-34b46c5860ae,DK Bh 4,Hasle,Hasle,Bornholm,Danmark,,,,14.7067,55.19,HAS_COORDINATES,COORDS_OK
+27c3ba06-3410-463c-8af0-d15be9462fb3,DK Bh 5,Klemensker,Klemensker,Bornholm,Danmark,,,,14.7494,55.1892,HAS_COORDINATES,COORDS_OK
+dfd47f6a-8ed2-49c5-aceb-75c8dc310bd3,DK Bh 6,Klemensker,Klemensker,Bornholm,Danmark,,,,14.7494,55.1892,HAS_COORDINATES,COORDS_OK
+0ea7c226-ad79-478c-b1cd-6b6ac721d7bb,DK Bh 7,Klemensker,Klemensker,Bornholm,Danmark,,,,14.7494,55.1892,HAS_COORDINATES,COORDS_OK
+9930f49d-b816-4b5f-99e6-3d6e0d14af36,DK Bh 8,Klemensker,Klemensker,Bornholm,Danmark,,,,14.7494,55.1892,HAS_COORDINATES,COORDS_OK
+4734a4fe-3f95-4cbb-86aa-90bfd7bab632,DK Bh 9,Klemensker,Klemensker,Bornholm,Danmark,,,,14.7494,55.1892,HAS_COORDINATES,COORDS_OK
+30e32b57-ec81-4e28-8753-0ee8277b8a4a,DR M67,Okänd,,Denmark,Denmark,,,13.191694,55.704306,HAS_COORDINATES,COORDS_OK
+c7a42b6c-b6ef-441b-a631-bee343204316,KJ 24,Sorte Muld,Næsbyhoved Broby sogn,Bornholm,Denmark,Odense,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+476fce1f-55c3-4b33-8875-5cf68b1f4577,KJ 07,Vimose,,Fyn,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+8c1dea94-dd11-4934-bb1c-e856c812dd91,KJ 12,Vimose,Smedstorps socken,Fyn,Denmark,Tomelilla,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+94b1c082-00cc-4ddb-97cc-7c4e07381bf0,KJ 14,Gudme I,Etelhems socken,Fyn,Denmark,Gotland,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+063298c1-674c-4e09-a907-fd74f91141d4,KJ 40,Vimose,Bømlo sogn,Fyn,Denmark,Bømlo,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+43178c2e-ea6f-42a1-b76c-5ba0683eda6f,KJ 41,Vimose,,Fyn,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+465420ea-513b-4a1e-b0fc-6b46306bf664,KJ 42,Vimose,Dalby sogn,Fyn,Denmark,Kolding,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+fc716a6f-35f0-4b6a-a0bf-53bfef5d249f,KJ 43,Vimose,Møgeltønder sogn,Fyn,Denmark,Tønder,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+86ece76f-814a-4457-91fd-64429773b34d,KJ 44,Vimose,Udenes sogn,Fyn,Denmark,Nes,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+19ce2bdf-dda3-4414-86c2-ee3ea419a77e,KJ 45,Vimose,Køng sogn,Fyn,Denmark,Assens,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+61fe8918-f931-48d8-8035-48204a651a03,KJ 46,Møllegårdsmarken,,Fyn,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+6f36ac32-0e1d-4dff-9c27-3a43ad308a3a,KJ 59,Køng,Drothems socken,Fyn,Denmark,Söderköping,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+79ac8ada-e150-43ec-9981-bde134de2457,DR 41,Jelling kyrka Jylland,Vickleby socken,Jylland,Denmark,Mörbylånga,,,9.4197,55.7553,HAS_COORDINATES,COORDS_OK
+caf94b05-9803-4cb4-b331-32a87bc5141b,DR 42,Jelling kyrka Jylland,Jelling sogn,Jylland,Denmark,Vejle,,,9.4197,55.7553,HAS_COORDINATES,COORDS_OK
+9db58ff3-7cdd-4877-9a51-383180304145,KJ 06,Frøslev,,Jylland,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+23214d1d-1a70-4d72-a2e4-9639eb5f1460,KJ 10,Illerup,Tuna socken,Jylland,Denmark,Uppsala,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+347a05eb-8139-4591-9166-47a1ac0c8482,KJ 11,Illerup,Værløse sogn,Jylland,Denmark,Furesø,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+41d438c5-8470-4dcc-bbcc-9c7ac50062de,KJ 17,Illerup,Øvre Rendal sogn,Jylland,Denmark,Rendalen,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+00f64692-6f15-41e0-bdc6-db514df9ead5,KJ 18,Illerup,Åfjord sogn,Jylland,Denmark,Åfjord,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+0ad24f61-9d89-4e47-98da-103a5eb22a7a,KJ 19,Illerup,Sottrup sogn,Jylland,Denmark,Sønderborg,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+91758d89-966f-4c1a-8b51-5a774c4911cb,KJ 20,Strårup (Dalby),Süderbrarup,Jylland,Denmark,Süderbrarup,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+d545392a-2d96-4206-8b7e-11a8bd36750b,KJ 26,Illerup,Næsbyhoved Broby sogn,Jylland,Denmark,Odense,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+2dc52f5a-14b9-4249-b7f9-6463c66da80a,KJ 29,Nøvling (Lundegårde),Svedala socken,Jylland,Denmark,Svedala,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+2a578bdf-cfd9-4a41-bf4c-4094d51d671e,KJ 30,Næsbjerg,Stenmagle sogn,Jylland,Denmark,Sorø,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+b4435789-e508-49e6-8e18-dac47dd10637,KJ 34,Illerup,Stenkyrka socken,Jylland,Denmark,Gotland,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+e7c8c994-4988-4197-9b26-fa8f11c8af06,KJ 35,Illerup,,Jylland,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+8f125f11-752e-4a3e-ae3c-71303eca2249,KJ 37,Illerup,Meland sogn,Jylland,Denmark,Meland,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+c2b7eff9-aeef-4040-a7ba-2a35ee386e53,KJ 50,Nydam,Dolm sogn,Jylland,Denmark,Hitra,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+c5eee5ec-ae89-4a9c-8794-2d58a05a5c8c,KJ 51,Nydam,Stod sogn,Jylland,Denmark,Steinkjer,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+65e6a4c7-9761-480a-a110-43266a143470,KJ 52,Nydam,Kinneved,Jylland,Denmark,Falköping,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+daf8b3f1-2399-4b16-98ff-355602eb6189,KJ 53,Nydam,Utvik sogn,Jylland,Denmark,Stryn,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+069e8486-550f-4ddd-ae68-c0a4103b7fc9,KJ 54,Nydam,Norrköping,Jylland,Denmark,Norrköping,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+f7946190-1eaf-45d4-97a7-db059a823041,KJ 55,Nydam,Nes sogn,Jylland,Denmark,Bjugn,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+fe503824-4576-4d70-ba03-d5cccc9a41b2,KJ 63,Nydam,Slidre sogn,Jylland,Denmark,Vestre Slidre,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+870c109d-1683-4227-aafe-7e40502de486,KJ 64,Nydam,Selje sogn,Jylland,Denmark,Selje,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+2105aad2-95ad-4828-a7da-0894f671c562,KJ 66,Nydam,Norra Vånga socken,Jylland,Denmark,Vara,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+1777a523-b9d7-4b1c-97f8-cde1e9c37c8c,KJ 67,Nydam,Fyrunga socken,Jylland,Denmark,Vara,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+beee9c60-9ace-4ac8-85fb-b920245da87c,KJ 03,Fælleseje (Slemminge),,Lolland,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+c8d00d18-a10e-49fc-915f-5812034c80d4,KJ 04,Garbølle,,Sjælland,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+9a9361af-8b0c-47f8-903e-7deb92bf4d77,KJ 32,Værløse,,Sjælland,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+182f1dc2-168a-485d-b0d9-eac7d1560ed2,KJ 33,Himlingøje II,,Sjælland,Denmark,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+02d3475b-3818-490a-9c21-397cf8f285c3,KJ 36,Himlingøje I,Bov sogn,Sjælland,Denmark,Aabenraa,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+f0d5d540-9a64-431e-afa1-c2f94bb4731d,KJ 38,Skovgårde,Tysnes sogn,Sjælland,Denmark,Tysnes,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+64ffb7be-80aa-49cf-bad1-58b7947280a8,Charnay,Charnay,Charnay,,France,,,,2.0934,48.898,HAS_COORDINATES,COORDS_OK
+203be580-6881-4de6-906b-46ffe833f970,Le Mans,Le Mans,Le Mans,,France,,,,0.1996,48.0061,HAS_COORDINATES,COORDS_OK
+4c45de11-1cf7-4368-b3ed-2e8173b48986,Saint-Dizier,Saint-Dizier,Saint-Dizier,,France,,,,4.9489,48.6373,HAS_COORDINATES,COORDS_OK
+ac22cec6-591c-44af-97b6-0089e8967921,KJ 47,Dahmsdorf,Svarteborgs socken,Brandenburg,Germany,Munkedal,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+699d9b51-cc8f-4b0e-b9f6-9e20a5692c29,KJ 01,Osterrönfeld,,Schleswig-Holstein,Germany,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+96c624cb-3b50-4cd8-a4cf-c1e6f8aab328,KJ 02,Meldorf,,Schleswig-Holstein,Germany,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+f5c0203c-8bbe-44e0-9e15-5294b890b480,KJ 28,Thorsberg/Torsbjerg,Flemløse sogn,Schleswig-Holstein,Germany,Assens,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+f14ac828-cf80-4cd8-8211-fc9850b185e7,KJ 39,Thorsberg,Gran/Tingelstad sogn,Schleswig-Holstein,Germany,Gran,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+fe917fc5-125e-4451-a5c2-3639bff3108f,Pireuslejonet,Pireus,Pireus,,Greece,,,,23.637,37.9469,HAS_COORDINATES,COORDS_OK
+1f3f9e2a-3597-41f6-87a7-521c63d273d8,Gr 1,Kingittorsuaq,Kingittorsuaq,,Greenland,,,,-55,73,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+c625ad77-6878-4973-903a-6748354996b7,Gr 13,Ikigaat/Herjolfsnes,Herjolfsnes,,Greenland,,,,-44.72,59.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+1dcb8c89-3fe7-496e-9753-bd225d771c63,Gr 15,Ikigaat / Herjolfsnes,Herjolfsnes,,Greenland,,,,-44.72,59.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+ad27d565-0266-44ec-988d-87d2a6417bc0,Gr 16,Garðar,Garðar,,Greenland,,,,-45.42,60.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+bac077d4-0c57-43a6-b44b-46c6d94dd3a0,Gr 25,Garðar,Garðar,,Greenland,,,,-45.42,60.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+93ff9d09-9649-4490-a3df-48e8985fcfa7,Gr 32,Qassiarsuk/Brattahlid,Brattahlid,,Greenland,,,,-45.52,61.15,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+f737e0be-9c7a-4ea6-8430-bf534c7dc07c,Gr 34,Sandnes,Sandnes,,Greenland,,,,-50,64.1,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+044d7a2e-6277-4e7e-bdcc-6d4c1c940f65,Gr 35,Kilaarsarfik / Sandnes,Sandnes,,Greenland,,,,-50,64.1,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+f0f4fde5-93af-4637-bd44-9263cfe65380,Gr 36,Kilaarsarfik / Sandnes,Sandnes,,Greenland,,,,-50,64.1,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+47004113-0a22-4c1b-a8f1-0eef64ddb8fd,Gr 43,Kilaarsarfik / Sandnes,Sandnes,,Greenland,,,,-50,64.1,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+3408e014-71a5-4d4d-9a5a-b33bb233d2ec,Gr 51,Umiviiarsuk,Umiviiarsuk,,Greenland,,,,-45.42,60.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+95e9ddcf-d5bf-4215-adee-6f0ff6685a01,Gr 6,Herjolfsnes,Herjolfsnes,,Greenland,,,,-44.72,59.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+9ab8e523-8696-46f9-9b7d-e7c3edadef36,Gr 7,Herjolfsnes,Herjolfsnes,,Greenland,,,,-44.72,59.99,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+293cba5f-d2b2-43b3-92d8-3d670a20e599,Gr Austmannadal 5,Austmannadal,Austmannadal,,Greenland,,,,-45.26,61,HAS_COORDINATES,COORDS_OK - Greenland coordinates need verification
+001d8eda-5f83-4f86-8021-887e0f885b28,LtRR 1987;248,Daugmale,Daugmale,,Latvia,,,,24.103832,56.948719,HAS_COORDINATES,COORDS_OK
+b0ff41be-babd-4826-b05e-8f06647a270f,KJ 65,Bergakker,Stord sogn,Västeuropa,Netherlands,Stord,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+18103c85-9d94-4dde-8b41-6c74a87e33b4,KJ 08,Frøyhov,,Akershus,Norway,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+337fb298-4caf-4279-a967-d3e41a781915,KJ 05,Opedal,,Hordaland,Norway,,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+2c2426d3-dcd5-4660-9fc1-942058358c74,KJ 56,Fløksand,Grytten sogn,Hordaland,Norway,Rauma,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+e09627c4-1a11-4273-bd7c-2d02bda508f2,KJ 58,Gjersvik,Sokndal sogn,Hordaland,Norway,Sokndal,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+8f060e20-2809-46cf-a760-9c39d2ca84f8,KJ 15,Einang,Klepp sogn,Oppland,Norway,Klepp,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+e9262322-7805-4004-b81b-2319088326b5,KJ 27,Øvre Stabu,Flemløse sogn,Oppland,Norway,Assens,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+7ad83477-a2fd-49d0-a5f6-5bd574b7a089,KJ 57,Nedre Hov,Sandar sogn,Oppland,Norway,Sandefjord,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+9e27699a-9363-46b8-8016-bfce86686288,KJ 21,Tune,Süderbrarup,Østfold,Norway,Süderbrarup,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+f402f05b-5d00-4707-a41d-139efeaff597,KJ 25,Førde,Næsbyhoved Broby sogn,Sogn og Fjordane,Norway,Odense,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+13556d57-a194-4d19-9019-5b43b4e0e831,KJ 16,Tanem,Gjerpen sogn,Sør-Trøndelag,Norway,Skien,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+bec0fbe1-bf52-4102-9368-94ce67c463c0,KJ 22,Bratsberg,Næsbyhoved Broby sogn,Sør-Trøndelag,Norway,Odense,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+a4a8a7ff-b0d9-47d6-9075-9e926814979f,KJ 61,Tveito,Tanums socken,Telemark,Norway,Tanum,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+c42b9b1f-3632-4f01-9ea8-ec64f670f274,N 305,Fortun kirke,Fortun sogn,Vestland,Norway,Luster,,,5.3533,60.3393,HAS_COORDINATES,COORDS_OK
+91f3b58a-af8a-4d0d-85d4-6a4331248437,N 565,Gol kirke,Gol sogn,Viken,Norway,Gol,,,10.6832,59.908,HAS_COORDINATES,COORDS_OK
+8eada7a6-1036-43e3-80f4-786468592bb3,KJ 48,Rozwadów,Time sogn,Östeuropa,Poland,Time,,,10.4,55.4,HAS_COORDINATES,DUPLICATE_INCORRECT_COORDS - Wrong generic coordinate
+804d6954-d744-4583-bf63-ae9c31e74b42,Staraja Ladoga 2,Staraja Ladoga,,,Russia,,,,32.2969,59.9947,HAS_COORDINATES,COORDS_OK
+92b70ab3-1b50-4ce3-9e27-584506f5efe3,DK Bl 1,Åryd,Halahult,Blekinge,Sverige,,,,14.99848,56.29746,HAS_COORDINATES,COORDS_OK
+9bf46fe2-15da-45b8-a9d1-f3baef9c4417,DK Bl 12,Sturkö,Sturkö,Blekinge,Sverige,,,,15.72854,56.11326,HAS_COORDINATES,COORDS_OK
+a0ada670-6551-4631-9907-40179e9fb876,DR 360,Björketorp Listerby socken,Listerby socken,Blekinge län,Sverige,Ronneby,Blekinge län,Blekinge,15.3807,56.2023,HAS_COORDINATES,COORDS_OK
+6ff95e0c-cebd-47c2-92d9-e643855948dd,Bo Hoga,Hoga,Hoga,Bohuslän,Sverige,Orust,Västra Götalands län,,11.69902,58.159175,HAS_COORDINATES,COORDS_OK
+85ae4941-7603-41f8-b3a7-43e525f0d37b,Bo Kalleby,Kalleby Tanums socken,Tanum,Bohuslän,Sverige,Tanum,Västra Götalands län,,11.332824,58.716508,HAS_COORDINATES,COORDS_OK
+b6d04980-cf67-43e4-95e2-ec4eaf2e1aa6,Bo NIYR 1,Brastads kyrka,Brastad,Bohuslän,Sverige,Lysekil,Västra Götalands län,,11.50039,58.395438,HAS_COORDINATES,COORDS_OK
+0f7d1a32-7e5b-441a-aac0-5d27503e1eaf,Bo NIYR 2,Kareby kyrka,Kareby,Bohuslän,Sverige,Uddevalla,Västra Götalands län,,11.912126,57.910345,HAS_COORDINATES,COORDS_OK
+82984c91-217a-42b8-870d-04be8bab4aeb,Bo NIYR 3,Norums kyrka,Norum,Bohuslän,Sverige,Uddevalla,Västra Götalands län,,11,58,HAS_COORDINATES,COORDS_OK
+16d2999a-b70a-4438-b23d-3e81584e2ea7,Bo NIYR 4,Utby Herrestads socken,Herrestad,Bohuslän,Sverige,Uddevalla,Västra Götalands län,,11.766894,58.33872,HAS_COORDINATES,COORDS_OK
+e601f592-dde6-48b5-b31f-12d20cccb3a4,Bo NIYR 7,Kleva Båtslycke Spekeröds socken,Spekeröd,Bohuslän,Sverige,Uddevalla,Västra Götalands län,,11,58,HAS_COORDINATES,COORDS_OK
+828b0211-b5b7-4d2a-afec-7bfd2473f4dc,Bo Rävsal,Rävsal Valla socken,Valla,Bohuslän,Sverige,Tjörn,Västra Götalands län,,11.734453,58.0662,HAS_COORDINATES,COORDS_OK
+76c47cb0-36b9-463c-8bf5-792f034195c3,Bo Tossene,Tossene,Tossene,Bohuslän,Sverige,Sotenäs,Västra Götalands län,,11,58,HAS_COORDINATES,COORDS_OK
+db9c15d8-e293-4f7d-9c46-9004c986e660,G 138,Halla kyrka,Halla socken,Gotland,Sverige,,,Gotland,18.2167,57.4833,HAS_COORDINATES,COORDS_OK
+d93575f9-9055-4898-9163-a685cf5850d3,G 139a,Halla kyrka,Halla socken,Gotland,Sverige,,,Gotland,18.2167,57.4833,HAS_COORDINATES,COORDS_OK
+094b30a5-d7a0-4d64-8ebd-1af5a8953ada,G 139b,Halla kyrka,Halla socken,Gotland,Sverige,,,Gotland,18.2167,57.4833,HAS_COORDINATES,COORDS_OK
+f1298ec0-2190-4f7e-909e-8c4aa5596179,G 140,Halla kyrka,Halla socken,Gotland,Sverige,,,Gotland,18.2167,57.4833,HAS_COORDINATES,COORDS_OK
+fc89489a-32d7-498e-bd1a-184f4e6419ff,G 141,Halla kyrka,Halla socken,Gotland,Sverige,,,Gotland,18.2167,57.4833,HAS_COORDINATES,COORDS_OK
+e77d6631-3b24-4659-8833-cbff9568b17f,G 142,Västerhejde kyrka,Västerhejde socken,Gotland,Sverige,,,Gotland,18.3,57.6,HAS_COORDINATES,COORDS_OK
+010fee8b-abb3-468f-a7b0-1b4378ee3f52,G 143,Stenkumla kyrka,Stenkumla socken,Gotland,Sverige,,,Gotland,18.4,57.5,HAS_COORDINATES,COORDS_OK
+6f8ad3fa-1bca-4cfc-94a2-134bf41f99db,G 144,Stenkumla kyrka,Stenkumla socken,Gotland,Sverige,,,Gotland,18.4,57.5,HAS_COORDINATES,COORDS_OK
+c52984cc-8937-4751-b1fe-c7c790587b9a,G 145,Stenkumla kyrka,Stenkumla socken,Gotland,Sverige,,,Gotland,18.4,57.5,HAS_COORDINATES,COORDS_OK
+b10b392b-397a-470d-aae1-799c4614f0d7,G 146,Stenkumla kyrka,Stenkumla socken,Gotland,Sverige,,,Gotland,18.4,57.5,HAS_COORDINATES,COORDS_OK
+8659b8ca-cc51-49ae-a973-ed3d02db86d4,G 147,Träkumla kyrka,Träkumla socken,Gotland,Sverige,,,Gotland,18.5,57.4,HAS_COORDINATES,COORDS_OK
+c40d5bb4-1102-475f-83b5-aaa9bc9d8c32,G 148,Träkumla kyrka,Träkumla socken,Gotland,Sverige,,,Gotland,18.5,57.4,HAS_COORDINATES,COORDS_OK
+969d9d2c-a654-4f1e-ae37-6664146469fa,G 149,Träkumla kyrka,Träkumla socken,Gotland,Sverige,,,Gotland,18.5,57.4,HAS_COORDINATES,COORDS_OK
+32c87640-46a3-4cc8-911c-d53fcdf44b8e,G 150,Follingbo kyrka,Follingbo socken,Gotland,Sverige,,,Gotland,18.3,57.5,HAS_COORDINATES,COORDS_OK
+0be64520-b663-4e19-aa3e-bb0c9ffbb8ba,Ög 136,Röks kyrkogård,Röks socken,Östergötland,Sverige,Ödeshög,Östergötland,Östergötland,14.77806,58.29333,HAS_COORDINATES,COORDS_OK
+0b1c99d6-2936-4752-92bb-58d87976a22e,Sö 106,Kungshållet på Kjula ås Kjula socken,Kjula,Södermanland,Sverige,,,Södermanland,16.67203,59.38337,HAS_COORDINATES,COORDS_OK
+0c89380a-2678-428b-a2fa-a01d56d16ef0,U 614,Torsätra,Västra Ryds socken,Uppland,Sverige,Upplands-Bro,Stockholm,Uppland,17.7668,59.5744,HAS_COORDINATES,COORDS_OK
+ccf9efdc-6cc3-4aa4-93b0-a8eb3b92de40,U 906,Brunna,Vänge socken,Uppland,Sverige,Uppsala,Uppsala,Uppland,17.4421,59.8471,HAS_COORDINATES,COORDS_OK
+d06015b5-a8d1-48f9-a49f-f05b6c92f297,U 489,Morby Lagga socken (ursprunglig plats),Lagga socken,Uppsala län,Sverige,Knivsta,Uppsala län,Uppland,17.6315,59.8577,HAS_COORDINATES,COORDS_OK
+7cd70a9a-5d06-452c-ba77-885e450f92f1,U 94,Sollentuna kyrka,Sollentuna socken,Uppsala län,Sverige,Sollentuna,Stockholm län,Uppland,17.95,59.42,HAS_COORDINATES,COORDS_OK
+68a176f6-2a37-4671-9604-aeb7131ee10f,U 95,Sollentuna kyrka,Sollentuna socken,Uppsala län,Sverige,Sollentuna,Stockholm län,Uppland,17.95,59.42,HAS_COORDINATES,COORDS_OK
+714abf78-87ee-41d0-90c2-bcfc877aa296,G 1,Sundre kyrka,Sundre,Gotlands län,Sverige,Gotland,Gotland,Gotland,18.1818,56.9359,HAS_COORDINATES,COORDS_OK
+88d9f659-ccb7-45dd-9850-006d0759118d,G 10,,Vamlingbo,,Sverige,Gotland,Gotland,Gotland,18.231,56.9749,HAS_COORDINATES,COORDS_OK
+60c2c826-9bd0-4a0b-a14d-0f40799ba530,G 13,Hamra kyrka,Hamra,,Sverige,Gotland,Gotland,Gotland,18.3139,56.9761,HAS_COORDINATES,COORDS_OK
+496d7894-5319-4040-88e4-d98ee4d3e4e1,G 14,Hamra kyrka,Hamra,,Sverige,Gotland,Gotland,Gotland,18.3139,56.9761,HAS_COORDINATES,COORDS_OK
+a52624fe-20a5-4b23-b102-0eaaea0476a4,G 18,Hamra kyrka,Hamra,,Sverige,Gotland,Gotland,Gotland,18.3139,56.9761,HAS_COORDINATES,COORDS_OK
+c47683c4-0e7d-4a54-843d-13658fae6e32,G 2,Sundre kyrka,Sundre,,Sverige,Gotland,Gotland,Gotland,18.1818,56.9359,HAS_COORDINATES,COORDS_OK
+845b39e0-4cd3-418a-aa9f-038530cc1f48,G 20,Hamra kyrka,Hamra,,Sverige,Gotland,Gotland,Gotland,18.3134,56.9761,HAS_COORDINATES,COORDS_OK
+6bbc10d2-566f-4474-90ab-51d94f3b80dc,G 3,Sundre kyrka,Sundre,,Sverige,Gotland,Gotland,Gotland,18.1818,56.9359,HAS_COORDINATES,COORDS_OK
+54d3eee3-e5ab-4704-84c4-7ff4018c3ab4,G 8,Sigraifs,Vamlingbo,,Sverige,Gotland,Gotland,Gotland,18.2462,56.991,HAS_COORDINATES,COORDS_OK
+5b82515c-a4c2-485a-b677-8895d5539489,Isala,Isala,Svärdsjö,,Sverige,Svärdsjö,Dalarna,Dalarna,15.943672,60.770426,HAS_COORDINATES,COORDS_OK
+4689ea60-9e9e-4b89-83d1-29b033b0a71e,M 1,Nolby 10 km söder om Sundsvall,Njurunda socken,,Sverige,Sundsvall,Västernorrlands län,Medelpad,17.36094,62.29194,HAS_COORDINATES,COORDS_OK
+34d714f6-0e00-4eec-a2c0-c1f370b0713c,Nä 1,Viby kyrka,Viby socken,,Sverige,,,Närke,14.8712,59.0603,HAS_COORDINATES,COORDS_OK
+9b21bf78-e70f-4fb8-8ae3-cc08ca428f3d,Nä 10,Mariedamm,Lerbäcks socken,,Sverige,,,Närke,15.1642,58.8517,HAS_COORDINATES,COORDS_OK
+8e77c8ce-a3e6-47b8-90ce-dcfb4c19e805,Nä 11,Tälje bro Odensbacken,Askers socken,,Sverige,,,Närke,15.5252,59.1643,HAS_COORDINATES,COORDS_OK
+c247a835-53ff-4ebe-9de5-afdb784d9cfa,Nä 12,Stora Mellösa kyrka,Stora Mellösa socken,,Sverige,,,Närke,15.5029,59.2122,HAS_COORDINATES,COORDS_OK
+d4e8adb8-38c2-46fb-8117-550301ad5fdf,Nä 13,Stora Mellösa kyrka,Stora Mellösa socken,,Sverige,,,Närke,15.503,59.2123,HAS_COORDINATES,COORDS_OK
+5e704953-b912-4fdc-806b-30ecd6428975,Nä 14,Bärsta Rönneberga,Stora Mellösa socken,,Sverige,,,Närke,15.4195,59.2155,HAS_COORDINATES,COORDS_OK
+a9d20caa-4bbd-474d-86ae-e326d2a4faca,Nä 15,Åsby,Stora Mellösa socken,,Sverige,,,Närke,15.5768,59.2044,HAS_COORDINATES,COORDS_OK
+364af389-f2b0-42ea-8d32-c572748fe52f,Nä 16,Ormesta Hageborg,Örebro,,Sverige,,,Närke,15.2781,59.252,HAS_COORDINATES,COORDS_OK
+9849adb3-fc61-4b9d-9a40-232231b3137e,Nä 17,Ormesta Hageborg,Örebro,,Sverige,,,Närke,15.2781,59.252,HAS_COORDINATES,COORDS_OK
+e178b52a-e7a3-47bc-9880-72c7c38ad444,Nä 18,Kumla by,Hovsta socken,,Sverige,,,Närke,15.2208,59.3422,HAS_COORDINATES,COORDS_OK
+a75eb774-43a9-4c30-aa47-679a21ada3c7,Nä 19,Täby kyrka,Täby socken,,Sverige,,,Närke,15.0678,59.1985,HAS_COORDINATES,COORDS_OK
+9f75a2ea-7e8e-4fd0-8bd4-3a5a040cc276,Nä 2,Väla,Viby socken,,Sverige,,,Närke,14.8984,59.074,HAS_COORDINATES,COORDS_OK
+ab3e1e95-3152-4aac-aa62-b7922e547aa0,Nä 20,Granhammarskyrkan,Vintrosa socken,,Sverige,,,Närke,14.973,59.2064,HAS_COORDINATES,COORDS_OK
+948ea2e5-a80e-4593-8f45-10e7f90bb3fd,Nä 21,Glanshammars kyrka,Glanshammars socken,,Sverige,,,Närke,15.4019,59.3192,HAS_COORDINATES,COORDS_OK
+c292316a-8f7e-44ce-a008-1002fba3bdd4,Nä 22,Glanshammars kyrka,Glanshammars socken,,Sverige,,,Närke,15.4019,59.3192,HAS_COORDINATES,COORDS_OK
+e0847713-1cda-48c0-bdb4-33255793a560,Nä 23,Glanshammars kyrka,Glanshammar socken,,Sverige,,,Närke,15.4021,59.3193,HAS_COORDINATES,COORDS_OK
+e5e1b244-7c4c-4495-803a-b27b34ef55c0,Nä 24,Glanshammars kyrka,Glanshammars socken,,Sverige,,,Närke,15.4015,59.3193,HAS_COORDINATES,COORDS_OK
+a641c4d4-e02d-40b8-b403-03e44f472056,Nä 25,Glanshammars kyrka,Glanshammars socken,,Sverige,,,Närke,15.4019,59.3192,HAS_COORDINATES,COORDS_OK
+1fa332e1-39ff-4a8f-954a-732d19a932e4,Nä 26,Glanshammars kyrka,Glanshammar socken,,Sverige,,,Närke,15.11,59.51,HAS_COORDINATES,COORDS_OK
+0c0cba28-4520-4cd1-a06a-428c91d24fdd,Nä 27,Glanshammars kyrka,Glanshammar socken,,Sverige,,,Närke,15.4026,59.319,HAS_COORDINATES,COORDS_OK
+abd93a84-91d2-4c50-accc-1dfdd48180f5,Nä 28,Glanshammars kyrka,Glanshammars socken,,Sverige,,,Närke,15.4019,59.3192,HAS_COORDINATES,COORDS_OK
+e82ef4d1-ecdc-494f-a7f4-d25ec8dc39a0,Nä 29,Apelboda,Glanshammar socken,,Sverige,,,Närke,15.3986,59.3545,HAS_COORDINATES,COORDS_OK
+3ffeed86-cc8c-4e3f-8ca8-9249dd0ef758,Nä 3,Frösvi,Edsbergs socken,,Sverige,,,Närke,14.891,59.1249,HAS_COORDINATES,COORDS_OK
+a1db4aa2-a2ee-41ec-b5b9-c839119e5537,Nä 30,Äversta,Glanshammars socken,,Sverige,,,Närke,15.3913,59.3332,HAS_COORDINATES,COORDS_OK
+c59d02dc-03ba-4716-ae12-4f674e7e4146,Nä 31,Södra Lunger,Götlunda socken,,Sverige,,,Närke,14.89,59.125,HAS_COORDINATES,COORDS_OK
+9e0664f1-b838-49e2-a0e4-6e087c0e5694,Nä 34,Nasta,Rinkaby socken,,Sverige,,,Närke,15.3535,59.3314,HAS_COORDINATES,COORDS_OK
+7b0b5004-b53a-4c76-91a1-6f5a60ae1845,Nä 4,Riseberga kloster,Edsbergs socken,,Sverige,,,Närke,14.8928,59.1544,HAS_COORDINATES,COORDS_OK
+fd3d7b76-ef42-43fd-9143-bacdb4c5c9e7,Nä 5,Riseberga kloster,Edsbergs socken,,Sverige,,,Närke,14.8928,59.1544,HAS_COORDINATES,COORDS_OK
+b06a286c-4a1a-4357-8c17-cf792368bb70,Nä 6,Riseberga kloster,Edsbergs socken,,Sverige,,,Närke,14.8928,59.1544,HAS_COORDINATES,COORDS_OK
+0bea270e-5927-42e1-9172-908785d2f086,Nä 7,Riseberga kloster,Edsbergs socken,,Sverige,,,Närke,14.8928,59.1544,HAS_COORDINATES,COORDS_OK
+01845a9b-beb9-448a-a9be-a029f535575d,Nä 8,Väsby,Kräcklinge socken,,Sverige,,,Närke,14.9714,59.1656,HAS_COORDINATES,COORDS_OK
+e414e458-65a0-425b-aefd-cb7cb3f48908,Nä 9,Vesta,Kumla socken,,Sverige,,,Närke,15.1,59.1,HAS_COORDINATES,COORDS_OK
+9253454e-93a0-4aee-8169-99f8b7422ede,Nä FBB1978;69,Glanshammars kyrka,Glanshammars socken,,Sverige,,,Närke,15.4019,59.3192,HAS_COORDINATES,COORDS_OK
+76049ad4-73d2-4f6c-b7dd-b263bfaeb0c2,Nä Fv1979;234,Örebro kv. Bromsgården,Örebro,,Sverige,,,Närke,15.212,59.2712,HAS_COORDINATES,COORDS_OK
+972e54ef-ede4-4120-bd43-14367ed192ba,Nä Fv1992;153,Örebro kv. Tryckeriet 10,Örebro,,Sverige,,,Närke,15.2133,59.271,HAS_COORDINATES,COORDS_OK
+0d9e8b95-16fe-4d0f-9d82-239c16d97bd6,Nä NOR1995;18,Ekeby kyrka,Ekeby socken,,Sverige,,,Närke,15.2719,59.166,HAS_COORDINATES,COORDS_OK
+c5022d4f-6429-4b03-9e82-cf962a0368b6,U Fv1953;263,Helenelund Sollentuna socken,Sollentuna socken,,Sverige,Sollentuna,Stockholm län,Uppland,17.96149,59.41578,HAS_COORDINATES,COORDS_OK
+3760c87b-d848-4616-882f-7602436eb745,U Fv1959;250,Sollentuna kyrka Sollentuna socken,Sollentuna socken,,Sverige,Sollentuna,Stockholm län,Uppland,17.95,59.42,HAS_COORDINATES,COORDS_OK
+d99b3258-faf2-46dc-b991-fe62f51e7e3b,U Fv1968;279B,Sollentuna kyrka Sollentuna socken,Sollentuna socken,,Sverige,Sollentuna,Stockholm län,Uppland,17.95,59.42,HAS_COORDINATES,COORDS_OK
+3aa2c953-ba8e-43f0-b995-b1f4ef014eea,Öl 8,Mörbylånga kyrkogård,,,Sweden,,,Öland,16.4149,56.5409,HAS_COORDINATES,COORDS_OK
+0bad238f-8ed3-4d41-a775-50be07f52611,Bl 1,Åryds socken,Åryds socken,Blekinge,Sweden,Karlshamn,,,14.9981,56.2981,HAS_COORDINATES,COORDS_OK
+1a01158e-7c76-4bdb-832a-740341659066,Bl 11,Lösens socken,Lösens socken,Blekinge,Sweden,Karlskrona,,,15.6884,56.197,HAS_COORDINATES,COORDS_OK
+c1e5abf3-b00e-4438-9bd5-89c0e8032861,Bl 12,Sturkö socken,Sturkö socken,Blekinge,Sweden,Karlskrona,,,15.7284,56.1134,HAS_COORDINATES,COORDS_OK
+78e139fb-49df-4104-8dec-aa4df9b28e9b,Bl 2,Gammaltorps socken,Gammaltorps socken,Blekinge,Sweden,Sölvesborg,,,14.6089,56.0734,HAS_COORDINATES,COORDS_OK
+a88958c8-d3c8-4ebb-befb-62999204f89a,Bl 4,Mjällby socken,Mjällby socken,Blekinge,Sweden,Sölvesborg,,,14.6509,56.0224,HAS_COORDINATES,COORDS_OK
+2ee7380b-17ed-4a5b-a375-6c2f2f08f770,Bl 5,Sölvesborg,Sölvesborg,Blekinge,Sweden,Sölvesborg,,,14.5813,56.0529,HAS_COORDINATES,COORDS_OK
+f6b8780a-198a-4001-b50e-a15287758b36,Bl 6,Listerby socken,Listerby socken,Blekinge,Sweden,Ronneby,,,15.3807,56.2023,HAS_COORDINATES,COORDS_OK
+d9c7d6e5-2d0a-4c94-a13c-2299214872e6,Bl 7,Listerby socken,Listerby socken,Blekinge,Sweden,Ronneby,,,15.4023,56.1966,HAS_COORDINATES,COORDS_OK
+e638ca55-06f6-4d78-8976-633fc94244d8,Bh 1,Bodilsker sogn,Bodilsker sogn,Bornholm,Sweden,Bornholm,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+fd4a9c33-c27b-46b1-8432-1d5f14c863ff,Bh 10,Rutsker sogn,Rutsker sogn,Bornholm,Sweden,Bornholm,,,14.6722,55.2528,HAS_COORDINATES,COORDS_OK
+8b517dd7-43e7-4e00-9ddf-ba5a8aecd53f,Bh 11,Rutsker sogn,Rutsker sogn,Bornholm,Sweden,Bornholm,,,14.6722,55.2528,HAS_COORDINATES,COORDS_OK
+1c0fd9cc-4cdc-498c-b99a-dfa8091931a0,Bh 12,Rø sogn,Rø sogn,Bornholm,Sweden,Bornholm,,,14.7069,55.2,HAS_COORDINATES,COORDS_OK
+79d7a4a0-c7b6-45d7-8c51-fab11d61be01,Bh 13,Bodilsker sogn,Bodilsker sogn,Bornholm,Sweden,Bornholm,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+84779846-34cf-4090-ae9f-e2c1e77bf020,Bh 14,Bodilsker sogn,Bodilsker sogn,Bornholm,Sweden,Bornholm,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+1e9ab5d8-1cc6-4192-a64d-78fafe16c68c,Bh 15,Bodilsker sogn,Bodilsker sogn,Bornholm,Sweden,Bornholm,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+062c9327-6448-426d-88b3-3ba6591979fa,Bh 16,Bodilsker sogn,Bodilsker sogn,Bornholm,Sweden,Bornholm,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+eb1cc41c-7e69-474e-b8b4-a1f305d4ddf7,Bh 17,Bodilsker sogn,Bodilsker sogn,Bornholm,Sweden,Bornholm,,,14.8597,55.1389,HAS_COORDINATES,COORDS_OK
+46ca884c-1434-49ec-9263-68ccc9a77011,Bh 18,Pedersker sogn,Pedersker sogn,Bornholm,Sweden,Bornholm,,,14.8944,55.1167,HAS_COORDINATES,COORDS_OK
+b7ee7efb-d4f3-409a-92d9-cb23f68a8de0,Bh 19,Pedersker sogn,Pedersker sogn,Bornholm,Sweden,Bornholm,,,14.8944,55.1167,HAS_COORDINATES,COORDS_OK
+5c169098-a648-4d7e-83ac-63ba4b1bd032,Bh 2,Poulsker sogn,Poulsker sogn,Bornholm,Sweden,Bornholm,,,14.8333,55.1167,HAS_COORDINATES,COORDS_OK
+12c36485-83a3-46a6-a4a4-978bd12df4e5,Bh 20,Pedersker sogn,Pedersker sogn,Bornholm,Sweden,Bornholm,,,14.8944,55.1167,HAS_COORDINATES,COORDS_OK
+bf17f9fe-43be-43ef-8155-9003270e6daf,Bh 21,Pedersker sogn,Pedersker sogn,Bornholm,Sweden,Bornholm,,,14.8944,55.1167,HAS_COORDINATES,COORDS_OK
+4d4d7d0b-cdde-412d-9fd0-a0a5347814fa,Bh 22,Pedersker sogn,Pedersker sogn,Bornholm,Sweden,Bornholm,,,14.8944,55.1167,HAS_COORDINATES,COORDS_OK
+325f4516-bd06-4966-9783-d7da48ca5a76,Bh 23,Poulsker sogn,Poulsker sogn,Bornholm,Sweden,Bornholm,,,14.8333,55.1167,HAS_COORDINATES,COORDS_OK
+d9975f4b-d078-445a-afce-09006debf01a,Bh 24,Poulsker sogn,Poulsker sogn,Bornholm,Sweden,Bornholm,,,14.8333,55.1167,HAS_COORDINATES,COORDS_OK
+5759fa4f-6425-4edc-a66a-c9c5817634b8,Bh 25,Povlsker sogn,Povlsker sogn,Bornholm,Sweden,Bornholm,,,14.8333,55.1167,HAS_COORDINATES,COORDS_OK
+6aa11274-56ec-4c8f-b45c-3dab148a8a1f,Bh 26,Povlsker sogn,Povlsker sogn,Bornholm,Sweden,Bornholm,,,14.8333,55.1167,HAS_COORDINATES,COORDS_OK
+2076eafe-9486-4474-ba73-645c94da9475,Bh 27,Åker sogn,Åker sogn,Bornholm,Sweden,Bornholm,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+c6e4e3e5-99da-476f-8488-0db4d9502cef,Bh 28,Åker sogn,Åker sogn,Bornholm,Sweden,Bornholm,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+b7cb6714-37dd-4813-b168-f6bf8926ea87,Bh 29,Åker sogn,Åker sogn,Bornholm,Sweden,Bornholm,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+a77ab133-98af-4fef-b402-88e47440c6d9,Bh 3,Åker sogn,Åker sogn,Bornholm,Sweden,Bornholm,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+f67c74c6-88c5-4309-8c98-36f029d9d7f9,Bh 30,Åker sogn,Åker sogn,Bornholm,Sweden,Bornholm,,,14.9025,55.0631,HAS_COORDINATES,COORDS_OK
+ca38a372-a966-432e-bbfb-3488ca0fbb30,Bh 32,Nyker sogn,Nyker sogn,Bornholm,Sweden,Bornholm,,,14.7417,55.1778,HAS_COORDINATES,COORDS_OK

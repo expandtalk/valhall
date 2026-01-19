@@ -1,0 +1,77 @@
+
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from "@/integrations/supabase/client";
+import { loadEnhancedRunicDataWithBetterCoordinates } from './enhancedDataLoader';
+import { loadDatabaseStats } from './statsLoader';
+import type { UseRunicDataProps } from './types';
+
+export const useRunicData = (filters: UseRunicDataProps) => {
+  console.log('🔄 useRunicData called with enhanced coordinate mapping');
+
+  // Query for inscriptions with enhanced coordinate mapping
+  const {
+    data: inscriptions = [],
+    isLoading: isInscriptionsLoading,
+    error: inscriptionsError,
+    refetch: refetchInscriptions
+  } = useQuery({
+    queryKey: ['runic-inscriptions-enhanced-v2', filters], // Changed key to force refresh
+    queryFn: () => loadEnhancedRunicDataWithBetterCoordinates(filters),
+    staleTime: 0, // Force fresh data
+    retry: 2,
+  });
+
+  // Query for database statistics
+  const {
+    data: dbStats = { 
+      totalInscriptions: 0, 
+      totalCoordinates: 0, 
+      totalCarvers: 0,
+      totalArtefacts: 0,
+      totalCities: 0,
+      totalFortresses: 0,
+      totalVikingNames: 0
+    },
+    isLoading: isStatsLoading,
+    refetch: refetchStats
+  } = useQuery({
+    queryKey: ['db-stats-enhanced'],
+    queryFn: loadDatabaseStats,
+    staleTime: 10 * 60 * 1000, // 10 minutes
+    retry: 1,
+  });
+
+  // Combined loading state
+  const isLoading = isInscriptionsLoading || isStatsLoading;
+
+  // Error handling
+  const connectionError = inscriptionsError || null;
+
+  // Load data function
+  const loadData = async () => {
+    try {
+      await Promise.all([refetchInscriptions(), refetchStats()]);
+    } catch (error) {
+      console.error('Error loading data:', error);
+    }
+  };
+
+  // Enhanced logging
+  console.log(`📊 Enhanced useRunicData state:`, {
+    inscriptionsCount: inscriptions.length,
+    withCoordinates: inscriptions.filter(i => i.coordinates).length,
+    isLoading,
+    hasError: !!connectionError,
+    dbStats
+  });
+
+  return {
+    inscriptions,
+    isLoading,
+    connectionError,
+    dbStats,
+    loadData
+  };
+};
+
+export type { UseRunicDataProps } from './types';

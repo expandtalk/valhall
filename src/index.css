@@ -1,0 +1,169 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Back to darker theme with modern color scheme */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom dark background for viking theme */
+.viking-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  min-height: 100vh;
+}
+
+/* Custom animations */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+/* Viking Age inspired map marker styles */
+.viking-map-markers {
+  /* Authentic Viking Age colors for map elements */
+  --viking-brown: #8B4513; /* Saddle brown - naturbrunt */
+  --viking-red: #A0342A; /* Krapp-rött - madder red */
+  --viking-yellow: #D4B429; /* Vejde-gul - weld yellow */
+  --viking-blue: #3A5F7A; /* Vejde-blå - limited use */
+  --viking-gray: #6B5B47; /* Björkbark-grå - birch bark gray */
+  --viking-black: #2C1810; /* Järnsvart - iron black */
+  --viking-beige: #E8E3D3; /* Naturligt lin - natural linen */
+}
+
+/* Enhanced map marker styling with Viking colors */
+.runic-marker {
+  filter: sepia(20%) saturate(120%) hue-rotate(15deg);
+}
+
+.viking-region-marker {
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3) !important;
+}
+
+.archaeological-find-marker {
+  border-color: var(--viking-brown) !important;
+  background: linear-gradient(135deg, var(--viking-red), var(--viking-brown)) !important;
+}
+
+.religious-marker {
+  background: var(--viking-yellow) !important;
+  border-color: var(--viking-brown) !important;
+}
+
+/* Dark brown header styling - Viking Age naturbrunt */
+.viking-header {
+  background: linear-gradient(135deg, #4a2c17 0%, #5d2f1a 50%, #3d1f10 100%);
+  border-bottom: 1px solid rgba(139, 69, 19, 0.4);
+}
+
+/* Enhanced card styling for dark theme */
+.viking-card {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Standardized feature card styling */
+.feature-card {
+  background: rgba(75, 85, 99, 0.3);
+  border: 1px solid rgba(156, 163, 175, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* Ensure all switches use blue theme consistently */
+.switch-blue [data-state="checked"] {
+  background-color: rgb(37 99 235) !important; /* blue-600 */
+}
+
+/* Global switch styling override for consistency */
+[data-radix-switch-root][data-state="checked"] {
+  background-color: rgb(37 99 235) !important; /* blue-600 */
+}

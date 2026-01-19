@@ -1,0 +1,4 @@
+project_id = "mnuifmcjspeaauzehasj"
+
+[functions.srd-integration]
+verify_jwt = true

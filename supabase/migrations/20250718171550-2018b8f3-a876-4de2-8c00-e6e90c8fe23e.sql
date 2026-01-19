@@ -1,0 +1,23 @@
+-- Lägg till Hälsinglands runinskrifter i databasen
+INSERT INTO runic_inscriptions (signum, name, location, parish, municipality, landscape, country, object_type, dating_text, period_start, period_end) VALUES 
+('Hs 1', 'Vevlinge by', 'Kämpens hembygdsgård, Bollnäs', 'Bollnäs socken', 'Bollnäs kommun', 'Hälsingland', 'Sverige', 'runstensfragment', 'Vikingatiden', 793, 1066),
+('Hs 2', 'Norrala kyrka', 'Norrala kyrkogård', 'Norrala socken', 'Söderhamns kommun', 'Hälsingland', 'Sverige', 'runsten', '1000-talet', 1000, 1100),
+('Hs 3', 'Borg', 'Borg, Norrala socken', 'Norrala socken', 'Söderhamns kommun', 'Hälsingland', 'Sverige', 'runstensfragment', '1000-talet', 1000, 1100),
+('Hs 4', 'Borg', 'Borg, Norrala socken', 'Norrala socken', 'Söderhamns kommun', 'Hälsingland', 'Sverige', 'runstensfragment', '1000-talet', 1000, 1100),
+('Hs 5', 'Daglösa', 'Trönö socken', 'Trönö socken', 'Söderhamns kommun', 'Hälsingland', 'Sverige', 'runstensfragment', '1000-talet', 1000, 1100),
+('Hs 6', 'Prästgården', 'Järvsö socken', 'Järvsö socken', 'Ljusdals kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 7', 'Forsaringen', 'Forsa kyrka', 'Forsa socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'dörrhandtag', 'Vikingatiden', 793, 1066),
+('Hs 8', 'Hudiksvalls kyrka', 'Hudiksvalls kyrka', 'Hudiksvalls socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 9', 'Hälsingtuna kyrka', 'Hälsingtuna kyrka', 'Hälsingtuna socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 10', 'Hälsingtuna kyrka', 'Hälsingtuna kyrka', 'Hälsingtuna socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 11', 'Högs kyrka', 'Högs kyrka', 'Högs socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 12', 'Högs kyrka', 'Högs kyrka', 'Högs socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 13', 'Hallsta och Hjortsta', 'Högs socken', 'Högs socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runstensfragment', 'Vikingatiden', 793, 1066),
+('Hs 14', 'Malstastenen', 'Malsta, Rogsta socken', 'Rogsta socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 15', 'Sunnå kvarndamm', 'Rogsta socken', 'Rogsta socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066),
+('Hs 16', 'Delsbo kyrka', 'Delsbo kyrka', 'Delsbo socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runstensfragment', 'Vikingatiden', 793, 1066),
+('Hs 17', 'Delsbo kyrka', 'Delsbo kyrka', 'Delsbo socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'runstensfragment', 'Vikingatiden', 793, 1066),
+('Hs 18', 'Delsbo kyrka', 'Delsbo kyrka', 'Delsbo socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'fragment', 'Vikingatiden', 793, 1066),
+('Hs 19', 'Delsbo kyrka', 'Delsbo kyrka', 'Delsbo socken', 'Hudiksvalls kommun', 'Hälsingland', 'Sverige', 'järnring', 'Vikingatiden', 793, 1066),
+('Hs 20', 'Ljusdals kyrka', 'Ljusdals kyrka', 'Ljusdals socken', 'Ljusdals kommun', 'Hälsingland', 'Sverige', 'runstensfragment', 'Vikingatiden', 793, 1066),
+('Hs 21', 'Jättendals kyrka', 'Jättendals kyrka', 'Jättendals socken', 'Nordanstigs kommun', 'Hälsingland', 'Sverige', 'runsten', 'Vikingatiden', 793, 1066);

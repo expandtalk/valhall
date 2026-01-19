@@ -1,0 +1,243 @@
+# Viking Age - Runologisk Forskningsplattform
+
+## Projektöversikt
+
+Viking Age är en omfattande plattform för runologisk forskning och analys av skandinaviska runinskrifter. Plattformen kombinerar modern webbteknologi med AI-driven analys (Google Gemini 2.0 Flash) för att hjälpa forskare att analysera, datera och förstå runinskrifter från vikingatiden och tidigare perioder.
+
+### Huvudfunktioner
+
+- **Runinskrifter**: Omfattande databas med runinskrifter, inklusive koordinater, dateringar, och metadata
+- **AI-analys**: Automatisk analys och datering av runinskrifter med Google Gemini
+- **Interaktiva kartor**: Visualisering av runinskrifter, forten, handelsvägar och historiska platser
+- **Kungakrönikor**: Databas över historiska kungar, dynastier och källor
+- **Genetisk data**: Integration av genetisk data från arkeologiska fynd
+- **Administratörspanel**: Omfattande verktyg för datahantering och import
+- **Flera språk**: Stöd för svenska och engelska
+
+## Teknisk Stack
+
+### Frontend
+- **React 18.3.1** - UI-bibliotek
+- **TypeScript** - Typad JavaScript
+- **Vite** - Build tool och dev server
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI-komponenter (Radix UI)
+- **React Router** - Routing
+- **TanStack Query** - Data fetching och caching
+- **React Leaflet 4.2.1** - Interaktiva kartor
+- **Leaflet** - Kartbibliotek
+
+### Backend & Database
+- **Supabase** - Backend-as-a-Service
+  - PostgreSQL-databas
+  - Authentication
+  - Row Level Security (RLS)
+  - Edge Functions
+- **Project ID**: `mnuifmcjspeaauzehasj`
+- **Database**: `runic-research-db`
+- **URL**: https://supabase.com/dashboard/project/mnuifmcjspeaauzehasj
+
+### Externa Tjänster
+- **Google Gemini 2.0 Flash** - AI-analys av runinskrifter
+- **Google Maps API** - Geokodning och karttjänster
+
+## Databasstruktur
+
+### Huvudtabeller
+
+#### Runinskrifter
+- `runic_inscriptions` - Huvudtabell för runinskrifter
+  - Innehåller: signum, translitteration, koordinater, datering, objekttyp, etc.
+  - Länkar till: parishes, carvers, artefacts
+
+#### Geografiska Data
+- `parishes` - Svenska socknar
+- `hundreds` - Härader
+- `folk_groups` - Folkgrupper
+- `viking_cities` - Vikingatida städer
+- `viking_fortresses` - Vikingatida forten
+- `swedish_hillforts` - Fornborgar
+
+#### Personer & Mästare
+- `carvers` - Runristare/mästare
+- `viking_names` - Vikingatida namn
+
+#### Historiska Data
+- `royal_dynasties` - Kungadynastier
+- `historical_kings` - Historiska kungar
+- `historical_sources` - Historiska källor
+- `royal_chronicles` - Kungakrönikor
+- `king_inscription_links` - Länkar mellan kungar och inskrifter
+
+#### Genetisk Data
+- `archaeological_sites` - Arkeologiska platser
+- `genetic_individuals` - Individer med genetisk data
+- `genetic_markers` - Genetiska markörer
+- `admixture_analysis` - ADMIXTURE-analysresultat
+- `qp adm_analysis` - qpAdm-analysresultat
+- `reference_populations` - Referenspopulationer
+- `historical_periods` - Historiska perioder
+
+#### Kristna Platser
+- `christian_sites` - Kloster, kyrkor och andra kristna platser
+  - Typer: monastery, church, holy_place, bishopric, hospital
+  - Ordens: cistercian, benedictine, franciscan, dominican, birgittine, etc.
+
+#### Vägar & Transport
+- `viking_roads` - Vikingatida vägar
+  - Typer: rullstensås, halväg, vinterväg, bro, vadställe, knutpunkt
+- `road_waypoints` - Vägsegment och waypoints
+- `road_landmarks` - Landmärken längs vägarna
+
+#### Artefakter
+- `artefacts` - Arkeologiska artefakter kopplade till inskrifter
+
+#### Handelsdata
+- `trade_routes` - Handelsvägar
+- `trade_cities` - Handelsstäder
+- `trade_goods` - Handelsvaror
+
+### Säkerhet & Rättigheter
+
+- **Row Level Security (RLS)** - Aktiverat på alla tabeller
+- **Policies**:
+  - Publik läsning för de flesta tabeller
+  - Admin-rättigheter för skrivning/uppdatering/radering
+  - Funktion: `has_role(user_id, 'admin')` för rollkontroll
+  - Funktion: `is_admin()` för admin-kontroll
+
+### Migrationsfiler
+
+Alla databasändringar hanteras via migrationsfiler i `supabase/migrations/`. Det finns över 250 migrationsfiler som dokumenterar databasens utveckling över tid.
+
+## Projektstruktur
+
+```
+vikingage/
+├── src/
+│   ├── components/          # React-komponenter
+│   │   ├── admin/          # Admin-paneler och verktyg
+│   │   ├── carvers/        # Runristare-komponenter
+│   │   ├── chronicles/     # Kungakrönikor
+│   │   ├── explorer/       # Dataexplorer
+│   │   ├── filters/        # Filterkomponenter
+│   │   ├── genetic/        # Genetisk data
+│   │   ├── import/         # Dataimportverktyg
+│   │   ├── map/            # Kartkomponenter
+│   │   ├── search/         # Sökfunktionalitet
+│   │   └── ui/             # UI-komponenter (shadcn)
+│   ├── hooks/              # Custom React hooks
+│   ├── pages/              # Sidor/routes
+│   ├── services/           # Externa tjänster (Gemini, Maps)
+│   ├── types/              # TypeScript-typer
+│   ├── utils/              # Hjälpfunktioner
+│   └── integrations/       # Supabase-integration
+│       └── supabase/
+│           ├── client.ts   # Supabase client
+│           └── types.ts    # Genererade databas-typer
+├── supabase/
+│   ├── migrations/         # Databasmigrationsfiler
+│   ├── functions/           # Edge Functions
+│   └── config.toml         # Supabase-konfiguration
+└── public/                 # Statiska filer
+```
+
+## Viktiga Routes
+
+- `/` - Startsida
+- `/welcome` - Välkomstsida med statistik
+- `/explore` - Dataexplorer
+- `/artefacts` - Artefakter
+- `/fortresses` - Vikingatida forten
+- `/carvers` - Runristare
+- `/royal-chronicles` - Kungakrönikor
+- `/prices` - Priser (troligen för API-användning)
+- `/auth` - Autentisering
+- `/admin` - Administratörspanel
+- `/profile` - Användarprofil
+
+## AI-integration
+
+### Google Gemini Service
+- **Tjänst**: `src/services/geminiService.ts`
+- **Edge Function**: `analyze-runic`
+- **Funktion**: Analyserar runinskrifter och ger:
+  - Datering
+  - Språklig analys
+  - Historisk kontext
+  - Tolkning
+
+## Dataimport
+
+Projektet har omfattande importverktyg för:
+- CSV-import av runinskrifter
+- Bulk-import av data
+- Koordinatfixning
+- Dataverifiering
+
+## Miljövariabler
+
+För att köra projektet lokalt behövs:
+- Supabase URL och keys (redan konfigurerade i `client.ts`)
+- Google Gemini API key (för AI-analys)
+- Google Maps API key (för geokodning)
+
+## Utveckling
+
+### Installera dependencies
+```bash
+npm install
+```
+
+### Starta dev server
+```bash
+npm run dev
+```
+
+### Build för produktion
+```bash
+npm run build
+```
+
+### Linting
+```bash
+npm run lint
+```
+
+## Databasanslutning
+
+Supabase-projektet är konfigurerat med:
+- **Project ID**: `mnuifmcjspeaauzehasj`
+- **URL**: `https://mnuifmcjspeaauzehasj.supabase.co`
+- **Database**: `runic-research-db`
+
+För att komma åt databasen:
+1. Gå till https://supabase.com/dashboard/project/mnuifmcjspeaauzehasj
+2. Använd Supabase Dashboard för att hantera data
+3. Edge Functions finns i `supabase/functions/`
+
+## Viktiga Filer
+
+- `package.json` - Projektberoenden
+- `vite.config.ts` - Vite-konfiguration
+- `tailwind.config.ts` - Tailwind CSS-konfiguration
+- `tsconfig.json` - TypeScript-konfiguration
+- `supabase/config.toml` - Supabase CLI-konfiguration
+
+## Noteringar
+
+- Projektet använder React 18.3.1 (inte React 19)
+- `react-leaflet` är nedgraderad till 4.2.1 för kompatibilitet med React 18
+- Projektet har stöd för flerspråkighet (svenska/engelska)
+- Alla tabeller har `created_at` och `updated_at` timestamps
+- RLS-policies säkerställer att endast admins kan modifiera data
+
+## Framtida Utveckling
+
+- Fortsatt integration av genetisk data
+- Utökad AI-analysfunktionalitet
+- Ytterligare historiska datakällor
+- Förbättrad kartvisualisering
+- Exportfunktioner för forskningsdata
+
+

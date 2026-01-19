@@ -1,0 +1,590 @@
+
+import { isUnderwaterInscription } from '@/utils/coordinateMapping';
+import { getGroupsByPeriod } from '@/utils/germanicTimeline/timelineData';
+import { getFindsInPeriod, ARCHAEOLOGICAL_FINDS } from '@/utils/archaeologicalFinds';
+import { getDeityPlaces, getChristianCenters, getChristianCentersByType } from '@/utils/religiousLocations/religiousPlacesData';
+import { generateChristianSitesLegendItems } from './christianSitesLegend';
+import { ChristianSite } from '@/hooks/useChristianSites';
+import { LegendItem, RunicInscription } from './types';
+
+export const generateBasicInscriptionItems = (
+  inscriptions: RunicInscription[],
+  isVikingMode: boolean,
+  enabledLegendItems: { [key: string]: boolean },
+  t: (key: string) => string,
+  selectedTimePeriod: string = 'all',
+  dbStats?: any,
+  christianSites?: ChristianSite[]
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  console.log(`🏗️ CORRECT COUNT: Generating legend items with proper counts`);
+  console.log(`📊 ACTUAL inscriptions count: ${inscriptions.length} (should be 2818+)`);
+  console.log('🎯 DEBUG: First few inscriptions:', inscriptions.slice(0, 3).map(i => ({ signum: i.signum, coordinates: i.coordinates })));
+
+  // Separera svenska och utländska runstenar
+  const swedishInscriptions = inscriptions.filter(i => 
+    !i.country || 
+    i.country.toLowerCase().includes('sverige') || 
+    i.country.toLowerCase().includes('sweden') ||
+    i.country.toLowerCase() === 'sweden'
+  );
+  
+  const foreignInscriptions = inscriptions.filter(i => 
+    i.country && 
+    !i.country.toLowerCase().includes('sverige') && 
+    !i.country.toLowerCase().includes('sweden') &&
+    i.country.toLowerCase() !== 'sweden'
+  );
+
+  console.log(`🇸🇪 Svenska runstenar: ${swedishInscriptions.length}`);
+  console.log(`🌍 Utländska runstenar: ${foreignInscriptions.length}`);
+
+  // 1. SVENSKA RUNSTENAR - första prioritet
+  items.push({
+    id: 'runic_inscriptions',
+    label: t('swedishRunestones'),
+    color: isVikingMode ? '#f97316' : '#ef4444',
+    count: swedishInscriptions.length,
+    enabled: enabledLegendItems.runic_inscriptions !== false
+  });
+
+  // 2. UTLÄNDSKA RUNSTENAR - andra prioritet
+  if (foreignInscriptions.length > 0) {
+    items.push({
+      id: 'foreign_inscriptions',
+      label: t('runestonesInOtherCountries'),
+      color: isVikingMode ? '#8b5cf6' : '#a855f7',
+      count: foreignInscriptions.length,
+      enabled: enabledLegendItems.foreign_inscriptions !== false
+    });
+  }
+
+  // 2. VIKINGACENTRA - andra prioritet
+  if (selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'all') {
+    items.push({
+      id: 'viking_centers',
+      label: t('vikingCenters'),
+      color: '#8b5cf6',
+      count: 49,
+      enabled: enabledLegendItems.viking_centers !== false
+    });
+  }
+
+  // 3. VALDEMARS SEGELLED - ✅ Viktig vattenväg med alla koordinater
+  items.push({
+    id: 'valdemars_route',
+    label: '⚔️ ' + t('valdemarsRoute1230s'),
+    color: '#1e3a8a', // Mörkblå för vikingatid
+    count: 95, // ✅ Alla vägpunkter visas
+    enabled: enabledLegendItems.valdemars_route !== false || enabledLegendItems.valdemar_route !== false,
+    type: 'primary' as const // ✅ Gör prominent
+  });
+
+  // 4. VIKTIGA VATTENVÄGAR - fjärde prioritet
+  items.push({
+    id: 'river_routes',
+    label: t('importantWaterways'),
+    color: '#1e40af',
+    count: 12,
+    enabled: enabledLegendItems.river_routes !== false
+  });
+
+  // 5. VIKINGATIDA VÄGAR - femte prioritet
+  if (selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'all') {
+    const roadChildren = [
+      { id: 'road_rullstensas', label: t('eskerRoads'), color: '#CD853F', count: 5 },
+      { id: 'road_halvagar', label: t('hollowWays'), color: '#A0522D', count: 2 },
+      { id: 'road_vinteragar', label: t('winterRoads'), color: '#4682B4', count: 2 },
+      { id: 'road_landmarks', label: t('bridgesAndFords'), color: '#2F4F4F', count: 5 }
+    ].map(child => ({
+      ...child,
+      enabled: enabledLegendItems[child.id] !== false
+    }));
+
+    const totalRoadCount = roadChildren.reduce((sum, child) => sum + child.count, 0);
+    
+    items.push({
+      id: 'viking_roads',
+      label: t('vikingAgeRoads'),
+      color: '#8B4513',
+      count: totalRoadCount,
+      enabled: enabledLegendItems.viking_roads !== false,
+      type: 'category',
+      children: roadChildren
+    });
+  }
+
+  // 6. FORNBORGAR - sjätte prioritet
+  items.push({
+    id: 'viking_fortresses',
+    label: t('fortresses'),
+    color: '#dc2626',
+    count: dbStats?.totalFortresses || 49,
+    enabled: enabledLegendItems.viking_fortresses !== false
+  });
+
+  // 7. RESTEN - kultplatser och andra objekt - dynamisk räkning
+  const religiousChildren = [
+    { id: 'religious_thor', label: t('thorCultSites'), color: '#ef4444', count: getDeityPlaces('thor', selectedTimePeriod).length },
+    { id: 'religious_odin', label: t('odinCultSites'), color: '#3b82f6', count: getDeityPlaces('odin', selectedTimePeriod).length }, 
+    { id: 'religious_frey', label: t('freyCultSites'), color: '#22c55e', count: getDeityPlaces('frey', selectedTimePeriod).length },
+    { id: 'religious_ull', label: t('ullCultSites'), color: '#a855f7', count: getDeityPlaces('ull', selectedTimePeriod).length },
+    { id: 'religious_njord', label: t('njordCultSites'), color: '#0ea5e9', count: getDeityPlaces('njord', selectedTimePeriod).length },
+    { id: 'religious_frigg', label: t('friggCultSites'), color: '#ec4899', count: getDeityPlaces('frigg', selectedTimePeriod).length },
+    { id: 'religious_other', label: t('otherCultSites'), color: '#9ca3af', count: getDeityPlaces('other', selectedTimePeriod).length }
+  ].map(child => ({
+    ...child,
+    enabled: false // Inaktiverad som standard
+  }));
+
+  const totalReligiousCount = religiousChildren.reduce((sum, child) => sum + child.count, 0);
+  
+  items.push({
+    id: 'religious_places',
+    label: t('paganCultSites'),
+    color: '#fbbf24',
+    count: totalReligiousCount,
+    enabled: false, // Inaktiverad som standard
+    type: 'category',
+    children: religiousChildren
+  });
+
+  // ✅ FOLKGRUPPER - Mer prominent placering (efter Valdemars segelled)
+  const germanicGroups = getGroupsByPeriod(selectedTimePeriod);
+  if (germanicGroups.length > 0) {
+    items.push({
+      id: 'germanic_timeline',
+      label: '🛡️ ' + t('germanicPeoples'),
+      color: '#8b5cf6',
+      count: germanicGroups.length,
+      enabled: enabledLegendItems.germanic_timeline !== false, // ✅ Default enabled for prominence
+      type: 'primary' as const // ✅ Make prominent
+    });
+  }
+
+  items.push({
+    id: 'stake_barriers',
+    label: t('barrierDefenses'),
+    color: '#dc2626',
+    count: 8,
+    enabled: false
+  });
+
+  items.push({
+    id: 'viking_regions',
+    label: t('vikingRegiments'),
+    color: '#7c3aed',
+    count: 12,
+    enabled: false
+  });
+
+  // Add Christian sites if provided
+  if (christianSites && christianSites.length > 0) {
+    const christianItems = generateChristianSitesLegendItems(christianSites, t);
+    items.push(...christianItems);
+  }
+
+  console.log(`✅ CORRECT: Generated ${items.length} legend items - Runestones: ${inscriptions.length} (should be 2818+)`);
+  console.log('🗺️ ÖLAND DEBUG: Checking for Öland inscriptions...');
+  const olandCount = inscriptions.filter(i => 
+    i.signum?.startsWith('Öl') || 
+    i.signum?.startsWith('B') && (
+      i.parish?.includes('Runstens socken') || 
+      i.parish?.includes('Gärdslösa socken') ||
+      i.parish?.includes('Gräsgårds socken') ||
+      i.parish?.includes('Stenåsa socken')
+    )
+  ).length;
+  console.log(`🏝️ Öland inscriptions found: ${olandCount}`);
+  
+  return items;
+};
+
+export const generateStatusBasedItems = (
+  inscriptions: RunicInscription[],
+  enabledLegendItems: { [key: string]: boolean },
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  const statusCategories = [
+    { id: 'well_preserved', status: 'good', label: t('wellPreserved'), color: '#22c55e' },
+    { id: 'damaged', status: 'damaged', label: t('damaged'), color: '#f59e0b' },
+    { id: 'fragmentary', status: 'fragmentary', label: t('fragmentary'), color: '#ef4444' }
+  ];
+
+  statusCategories.forEach(category => {
+    const count = inscriptions.filter(i => i.status === category.status).length;
+    if (count > 0) {
+      items.push({
+        id: category.id,
+        label: category.label,
+        color: category.color,
+        count,
+        enabled: enabledLegendItems[category.id] !== false
+      });
+    }
+  });
+
+  return items;
+};
+
+export const generateUnderwaterItems = (
+  inscriptions: RunicInscription[],
+  enabledLegendItems: { [key: string]: boolean },
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  const underwaterCount = inscriptions.filter(i => isUnderwaterInscription(i)).length;
+  if (underwaterCount > 0) {
+    items.push({
+      id: 'underwater',
+      label: t('underwater'),
+      color: '#0891b2',
+      count: underwaterCount,
+      enabled: enabledLegendItems.underwater !== false
+    });
+  }
+
+  return items;
+};
+
+export const generateCountryBasedItems = (
+  inscriptions: RunicInscription[],
+  enabledLegendItems: { [key: string]: boolean },
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  const countryCategories = [
+    // Major Scandinavian countries - ON per default
+    { id: 'sweden', country: 'Sweden', label: t('sweden'), color: '#3b82f6', majorCountry: true },
+    { id: 'norway', country: 'Norway', label: t('norway'), color: '#dc2626', majorCountry: true },
+    { id: 'denmark', country: 'Denmark', label: t('denmark'), color: '#ef4444', majorCountry: true },
+    { id: 'iceland', country: 'Iceland', label: t('iceland'), color: '#0891b2', majorCountry: true },
+    
+    // Minor countries - OFF per default
+    { id: 'finland', country: 'Finland', label: t('finland'), color: '#10b981', majorCountry: false },
+    { id: 'estonia', country: 'Estonia', label: t('estonia'), color: '#8b5cf6', majorCountry: false },
+    { id: 'russia', country: 'Russia', label: t('russia'), color: '#f59e0b', majorCountry: false },
+    { id: 'ukraine', country: 'Ukraine', label: t('ukraine'), color: '#06b6d4', majorCountry: false },
+    { id: 'england', country: 'England', label: t('england'), color: '#84cc16', majorCountry: false },
+    { id: 'ireland', country: 'Ireland', label: t('ireland'), color: '#22c55e', majorCountry: false },
+    { id: 'scotland', country: 'Scotland', label: t('scotland'), color: '#a855f7', majorCountry: false },
+    { id: 'faroe_islands', country: 'Faroe Islands', label: t('faroeIslands'), color: '#0ea5e9', majorCountry: false },
+    { id: 'greenland', country: 'Greenland', label: t('greenland'), color: '#64748b', majorCountry: false }
+  ];
+
+  countryCategories.forEach(category => {
+    const count = inscriptions.filter(i => i.country === category.country).length;
+    if (count > 0) {
+      items.push({
+        id: category.id,
+        label: category.label,
+        color: category.color,
+        count,
+        enabled: enabledLegendItems[category.id] !== false
+      });
+    }
+  });
+
+  return items;
+};
+
+export const generateReligiousItems = (
+  enabledLegendItems: { [key: string]: boolean },
+  selectedTimePeriod: string = 'all',
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  // Pagan deity items
+  const paganChildren = [
+    { id: 'religious_thor', label: t('thorCultSites'), color: '#ef4444', count: getDeityPlaces('thor', selectedTimePeriod).length },
+    { id: 'religious_odin', label: t('odinCultSites'), color: '#3b82f6', count: getDeityPlaces('odin', selectedTimePeriod).length }, 
+    { id: 'religious_frey', label: t('freyCultSites'), color: '#22c55e', count: getDeityPlaces('frey', selectedTimePeriod).length },
+    { id: 'religious_ull', label: t('ullCultSites'), color: '#a855f7', count: getDeityPlaces('ull', selectedTimePeriod).length },
+    { id: 'religious_njord', label: t('njordCultSites'), color: '#0ea5e9', count: getDeityPlaces('njord', selectedTimePeriod).length },
+    { id: 'religious_frigg', label: t('friggCultSites'), color: '#ec4899', count: getDeityPlaces('frigg', selectedTimePeriod).length },
+    { id: 'religious_other', label: t('otherCultSites'), color: '#9ca3af', count: getDeityPlaces('other', selectedTimePeriod).length }
+  ].filter(child => child.count > 0).map(child => ({
+    ...child,
+    enabled: enabledLegendItems[child.id] !== false,
+    parentId: 'pagan_gods'
+  }));
+
+  // Christian center items
+  const christianChildren = [
+    { id: 'christian_archbishop', label: t('archbishopSeats'), color: '#7c2d12', count: getChristianCentersByType('archbishop_seat', selectedTimePeriod).length },
+    { id: 'christian_bishop', label: t('bishopSeats'), color: '#a16207', count: getChristianCentersByType('bishop_seat', selectedTimePeriod).length },
+    { id: 'christian_mission', label: t('missionSites'), color: '#059669', count: getChristianCentersByType('mission_site', selectedTimePeriod).length },
+    { id: 'christian_franciscan', label: t('franciscanMonasteries'), color: '#7c3aed', count: getChristianCentersByType('franciscan', selectedTimePeriod).length },
+    { id: 'christian_dominican', label: t('dominicanMonasteries'), color: '#dc2626', count: getChristianCentersByType('dominican', selectedTimePeriod).length },
+    { id: 'christian_birgittine', label: t('birgittineMonasteries'), color: '#2563eb', count: getChristianCentersByType('birgittine', selectedTimePeriod).length }
+  ].filter(child => child.count > 0).map(child => ({
+    ...child,
+    enabled: enabledLegendItems[child.id] !== false,
+    parentId: 'christian_centers'
+  }));
+
+  // Calculate totals
+  const totalPagan = paganChildren.reduce((sum, child) => sum + child.count, 0);
+  const totalChristian = christianChildren.reduce((sum, child) => sum + child.count, 0);
+  const totalReligious = totalPagan + totalChristian;
+
+  // Create main religious category with subcategories
+  const religiousCategories = [];
+  
+  if (totalPagan > 0) {
+    religiousCategories.push({
+      id: 'pagan_gods',
+      label: '🔨 ' + t('paganGods'),
+      color: '#6b7280',
+      count: totalPagan,
+      enabled: enabledLegendItems.pagan_gods !== false,
+      type: 'category',
+      children: paganChildren
+    });
+  }
+
+  if (totalChristian > 0) {
+    religiousCategories.push({
+      id: 'christian_centers',
+      label: '✝️ ' + t('christianCenters'),
+      color: '#92400e',
+      count: totalChristian,
+      enabled: enabledLegendItems.christian_centers !== false,
+      type: 'category',
+      children: christianChildren
+    });
+  }
+
+  items.push({
+    id: 'religious_places',
+    label: t('religious'),
+    color: '#fbbf24',
+    count: totalReligious,
+    enabled: enabledLegendItems.religious_places !== false,
+    type: 'category',
+    children: religiousCategories
+  });
+
+  return items;
+};
+
+export const generateTimelineAndArchaeologicalItems = (
+  selectedTimePeriod: string,
+  enabledLegendItems: { [key: string]: boolean },
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  // Add Germanic timeline
+  const germanicGroups = getGroupsByPeriod(selectedTimePeriod);
+  items.push({
+    id: 'germanic_timeline',
+    label: t('germanicPeoples'),
+    color: '#8b5cf6',
+    count: germanicGroups.length,
+    enabled: enabledLegendItems.germanic_timeline !== false
+  });
+
+  // Add archaeological finds
+  const archaeologicalFinds = getFindsInPeriod(ARCHAEOLOGICAL_FINDS, selectedTimePeriod);
+  items.push({
+    id: 'archaeological_finds',
+    label: t('discoveries'),
+    color: '#059669',
+    count: archaeologicalFinds.length,
+    enabled: enabledLegendItems.archaeological_finds !== false
+  });
+
+  return items;
+};
+
+export const generateRouteItems = (
+  selectedTimePeriod: string,
+  enabledLegendItems: { [key: string]: boolean },
+  isVikingMode: boolean,
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  // Viking waterways (show in Viking Age, Vendel Period, and all)
+  if (selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'vendel_period' || selectedTimePeriod === 'medieval' || selectedTimePeriod === 'all') {
+    items.push({
+      id: 'water_routes',
+      label: '🌊 ' + t('vikingWaterways'),
+      color: '#0891b2',
+      count: 23, // Total from database
+      enabled: enabledLegendItems.water_routes !== false,
+      type: 'category',
+      children: [
+        {
+          id: 'swedish_rivers',
+          label: t('swedishRivers'),
+          color: '#0891b2',
+          count: 11,
+          enabled: enabledLegendItems.swedish_rivers !== false
+        },
+        {
+          id: 'european_rivers',
+          label: t('europeanRivers'),
+          color: '#0369a1',
+          count: 8,
+          enabled: enabledLegendItems.european_rivers !== false
+        },
+        {
+          id: 'trade_routes',
+          label: '⛵ ' + t('tradeRoutes'),
+          color: '#dc2626',
+          count: 4,
+          enabled: enabledLegendItems.trade_routes !== false
+        }
+      ]
+    });
+  }
+
+  // Valdemar's sailing route (Viking Age specific) - ✅ PROMINENT WATERWAY
+  if (selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'vendel_period' || selectedTimePeriod === 'medieval' || selectedTimePeriod === 'all') {
+    items.push({
+      id: 'valdemars_route',
+      label: '⚔️ ' + t('valdemarsRoute') + ' (1230-talet)',
+      color: isVikingMode ? '#1e3a8a' : '#3b82f6', // ✅ Consistent colors
+      count: 95, // ✅ All route coordinates
+      enabled: enabledLegendItems.valdemars_route ?? true, // ✅ Default enabled for prominence
+      type: 'primary' as const // ✅ Make it prominent in legend
+    });
+  }
+
+  // 🔧 FIX: Lägg till landvägar som egen kategori FÖRE pilgrimsvägar
+  if (selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'vendel_period' || selectedTimePeriod === 'medieval' || selectedTimePeriod === 'all') {
+    items.push({
+      id: 'land_routes',
+      label: '🛣️ ' + t('importantWaterways'),
+      color: '#8b5a2b',
+      count: 65, // Uppskattning baserat på befintliga vägar
+      enabled: enabledLegendItems.land_routes ?? true, // ✅ Default enabled
+      type: 'primary' as const
+    });
+  }
+
+  // Trade/Pilgrim routes - show as trade routes in Viking Age, pilgrim routes in Medieval
+  if (selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'vendel_period' || selectedTimePeriod === 'medieval' || selectedTimePeriod === 'all') {
+    const isVikingEra = selectedTimePeriod === 'viking_age' || selectedTimePeriod === 'vendel_period';
+    const routeLabel = isVikingEra ? t('ancientTradeRoutes') : t('pilgrimRoutes');
+    const routeIcon = isVikingEra ? '🛣️' : '⛪';
+    
+    items.push({
+      id: 'pilgrim_routes',
+      label: routeIcon + ' ' + routeLabel,
+      color: '#7c3aed',
+      count: 89, // Total waypoints across all routes
+      enabled: enabledLegendItems.pilgrim_routes !== false,
+      type: 'category',
+      children: [
+        {
+          id: 'olavs_routes',
+          label: isVikingEra ? t('northernTradeRoutes') : t('olavsRoutes'),
+          color: '#7c3aed',
+          count: 45, // Östleden + Romboleden + Västgötavägen + Bergslagsvägen
+          enabled: enabledLegendItems.olavs_routes !== false
+        },
+        {
+          id: 'erik_route',
+          label: isVikingEra ? t('balticTradeRoute') : t('erikRoute'),
+          color: '#8b5cf6',
+          count: 20, // Uppsala-Åbo route
+          enabled: enabledLegendItems.erik_route !== false
+        },
+        {
+          id: 'sigfrid_route',
+          label: isVikingEra ? t('southernTradeRoute') : t('sigfridRoute'),
+          color: '#a855f7',
+          count: 12, // Växjö and Värend route
+          enabled: enabledLegendItems.sigfrid_route !== false
+        },
+        {
+          id: 'james_route',
+          label: isVikingEra ? t('westernTradeRoute') : t('jamesRoute'),
+          color: '#c084fc',
+          count: 12, // Swedish part of Santiago route
+          enabled: enabledLegendItems.james_route !== false
+        }
+      ]
+    });
+  }
+
+  // Royal routes (Medieval only)
+  if (selectedTimePeriod === 'medieval' || selectedTimePeriod === 'all') {
+    items.push({
+      id: 'land_routes',
+      label: '👑 ' + t('royalRoutes'),
+      color: '#d97706',
+      count: 13, // Eriksgatan waypoints
+      enabled: enabledLegendItems.land_routes !== false,
+      type: 'category',
+      children: [
+        {
+          id: 'eriksgatan',
+          label: t('eriksgatan'),
+          color: '#d97706',
+          count: 13,
+          enabled: enabledLegendItems.eriksgatan !== false
+        }
+      ]
+    });
+  }
+
+  return items;
+};
+
+export const generateVikingSpecificItems = (
+  isVikingMode: boolean,
+  selectedTimePeriod: string,
+  enabledLegendItems: { [key: string]: boolean },
+  t: (key: string) => string
+): LegendItem[] => {
+  const items: LegendItem[] = [];
+
+  if (!isVikingMode || selectedTimePeriod !== 'viking_age') {
+    return items;
+  }
+
+  // Viking fortress types - RESTORED
+  const fortressItems = [
+    { id: 'ring_fortress', label: t('ringFortresses'), color: '#dc2626', count: 7 },
+    { id: 'hillfort', label: t('hillforts'), color: '#ea580c', count: 21 },
+    { id: 'longphort', label: t('longphorts'), color: '#ca8a04', count: 6 },
+    { id: 'royal_center', label: t('royalCenters'), color: '#16a34a', count: 3 },
+    { id: 'coastal_defense', label: t('coastalDefense'), color: '#0891b2', count: 1 },
+    { id: 'trading_post', label: t('tradingPosts'), color: '#10b981', count: 5 }
+  ];
+
+  fortressItems.forEach(item => {
+    items.push({
+      ...item,
+      enabled: enabledLegendItems[item.id] !== false
+    });
+  });
+
+  // Viking cities - RESTORED
+  const cityItems = [
+    { id: 'religious_center', label: t('religiousCenters'), color: '#fbbf24', count: 8 },
+    { id: 'trading_post_city', label: t('tradingPlaces'), color: '#10b981', count: 12 },
+    { id: 'koping', label: t('koping'), color: '#06b6d4', count: 15 },
+    { id: 'established_city', label: t('establishedCities'), color: '#8b5cf6', count: 6 },
+    { id: 'gotlandic_center', label: t('gotlandicCenters'), color: '#f59e0b', count: 4 }
+  ];
+
+  cityItems.forEach(item => {
+    items.push({
+      ...item,
+      enabled: enabledLegendItems[item.id] !== false
+    });
+  });
+
+  return items;
+};
