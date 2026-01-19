@@ -1,73 +1,148 @@
-# Welcome to your Lovable project
+# Viking Age - Runological Research Platform
 
-## Project info
+A comprehensive platform for runological research and analysis of Scandinavian runic inscriptions. Combines modern web technology with AI-driven analysis using Google Gemini 2.0 Flash to help researchers analyze, date, and understand rune stones from the Viking Age and earlier periods.
 
-**URL**: https://lovable.dev/projects/696fe4af-1b2d-4c53-9f7a-f259b8e72034
+## Features
 
-## How can I edit this code?
+- **Runic Inscriptions Database** - Extensive database with coordinate data, dating, and metadata
+- **AI Analysis** - Automatic analysis and dating with Google Gemini
+- **Interactive Maps** - Visualization of rune stones, fortresses, trade routes, and historical locations
+- **Royal Chronicles** - Database of historical kings, dynasties, and sources
+- **Genetic Data Integration** - Archaeological genetic data
+- **Admin Panel** - Comprehensive data management and import tools
+- **Multi-language Support** - Swedish and English
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+### Frontend
+- React 18.3.1
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- React Router
+- TanStack Query
+- React Leaflet 4.2.1
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/696fe4af-1b2d-4c53-9f7a-f259b8e72034) and start prompting.
+### Backend & Database
+- **Supabase** - Backend-as-a-Service with PostgreSQL
+- **Project ID**: `mnuifmcjspeaauzehasj`
+- **Database**: `runic-research-db`
 
-Changes made via Lovable will be committed automatically to this repo.
+### External Services
+- Google Gemini 2.0 Flash - AI analysis
+- Google Maps API - Geocoding and mapping
 
-**Use your preferred IDE**
+## Local Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js and npm installed ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- Access to Supabase project credentials
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Setup Steps
 
-Follow these steps:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/expandtalk/valhall.git
+   cd valhall
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Setup environment variables**
+   ```bash
+   cp .env.example .env
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **Configure API credentials**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+   Open `.env` and fill in the variables:
+
+   - **Supabase credentials** - Contact the project administrator or:
+     - Request access to the Supabase project at https://supabase.com/dashboard
+     - Once granted access, go to **Settings → API** to get your credentials
+
+   - **Google Gemini API key** (optional) - Get from https://makersuite.google.com/app/apikey
+
+   - **Google Maps API key** (optional) - Get from https://console.cloud.google.com/
+
+   **Important**: Never commit `.env` to version control - it's in `.gitignore` for security
+
+5. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+   The app will be available at `http://localhost:5173`
+
+## Available Scripts
+
+```bash
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Run linting
+npm run lint
 ```
 
-**Edit a file directly in GitHub**
+## Security Notes
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Environment variables in `.env` are **not tracked** by git (protected in `.gitignore`)
+- The `.env.example` file shows which variables are needed but contains no sensitive data
+- Never share API keys or database credentials publicly
+- Always use environment variables for sensitive data
 
-**Use GitHub Codespaces**
+## Database Schema
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The database includes tables for:
+- Runic inscriptions
+- Geographic data (parishes, hundreds, folk groups, cities, fortresses)
+- Historical data (kings, dynasties, sources)
+- Genetic data (individuals, markers, populations)
+- Religious sites (monasteries, churches, bishoprics)
+- Trade routes and goods
+- Artifacts and carvers
 
-## What technologies are used for this project?
+See `CLAUDE.md` for detailed database documentation.
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The application can be deployed as a static site or with a Node.js server. The Vite build output is suitable for any static hosting service.
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/696fe4af-1b2d-4c53-9f7a-f259b8e72034) and click on Share -> Publish.
+When contributing:
+1. Create a new branch for your feature
+2. Make your changes
+3. Commit with clear, descriptive messages
+4. Push to your branch
+5. Create a pull request
 
-## Can I connect a custom domain to my Lovable project?
+## Project Structure
 
-Yes, you can!
+```
+valhall/
+├── src/
+│   ├── components/        # React components
+│   ├── pages/             # Page routes
+│   ├── services/          # External services (Gemini, Maps)
+│   ├── types/             # TypeScript types
+│   └── utils/             # Helper functions
+├── supabase/
+│   ├── migrations/        # Database migrations
+│   └── functions/         # Edge Functions
+├── public/                # Static assets
+└── README.md              # This file
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Support & Documentation
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Full project documentation: see `CLAUDE.md`
+- Supabase Dashboard: https://supabase.com/dashboard/project/mnuifmcjspeaauzehasj
+- Questions or issues: Create a GitHub issue or contact the project administrator
