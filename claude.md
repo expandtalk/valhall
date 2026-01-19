@@ -232,6 +232,100 @@ För att komma åt databasen:
 - Alla tabeller har `created_at` och `updated_at` timestamps
 - RLS-policies säkerställer att endast admins kan modifiera data
 
+## Teamarbete & Collaboration
+
+### Git Workflow
+
+1. **Branching**
+   - `main` - Produktionsred kod
+   - `develop` - Utvecklingsversion
+   - Feature branches: `feature/description` - För nya features
+   - Bugfix branches: `fix/description` - För bugfixar
+
+2. **Commits**
+   - Använd tydliga, beskrivande commit-meddelanden
+   - Format: `[type]: description` (t.ex. `feat: add map filtering`, `fix: resolve database connection issue`)
+   - En commit = en logisk ändring
+
+3. **Pull Requests**
+   - Skapa PR för alla ändringar till `main` eller `develop`
+   - Inklusive beskrivning av vad som ändras och varför
+   - Minst 1 reviewer före merge
+
+### Supabase Access för Teammedlemmar
+
+**För nya bidragsgivare:**
+
+1. Kontakta projektadministratören för att få tillgång till Supabase-projektet
+2. Du får en inbjudan till Supabase-organisationen
+3. Acceptera inbjudan och logga in på dashboard
+4. Gå till **Settings → API** för att få dina credentials
+5. Fyll i `.env`-filen med dina credentials (DELA ALDRIG .env-filen)
+
+**Roller i Supabase:**
+- **Viewer** - Kan endast läsa data
+- **Developer** - Kan läsa, skriva och köra migrations
+- **Owner** - Full tillgång (normalt bara projektledare)
+
+### Database Migrations
+
+**Viktigt**: Alla databasändringar måste hanteras via migrations, aldrig direkta ändringar i dashboard.
+
+**Skapa en ny migration:**
+```bash
+supabase migration new [descriptive_name]
+```
+
+**Tillämpa migrations lokalt:**
+```bash
+supabase db push
+```
+
+**Innan du pushar en migration:**
+1. Testa den lokalt: `supabase db push`
+2. Verifiera att inga befintliga data går förlorad
+3. Committa migrationen tillsammans med motsvarande TypeScript-ändringar
+4. Push och skapa PR
+5. Andra bidragsgivare kör `supabase db push` efter de pullar din kod
+
+**Migrationsfiler:**
+- Lagras i `supabase/migrations/`
+- Filnamnen är automatiskt genererade med timestamp
+- Innehål: SQL-satser för schema-ändringar
+
+## Säkerhet & Miljövariabler
+
+### Environment Variables (.env)
+
+**Viktigt**: Aldrig committa `.env`-filen!
+
+Projektet använder följande variabler:
+- `VITE_SUPABASE_PROJECT_ID` - Supabase project ID
+- `VITE_SUPABASE_PUBLISHABLE_KEY` - Anon/publicerbar nyckel
+- `VITE_SUPABASE_URL` - Supabase API URL
+- `VITE_GEMINI_API_KEY` - Google Gemini API (optional)
+- `VITE_GOOGLE_MAPS_API_KEY` - Google Maps API (optional)
+
+Se `.env.example` för mall.
+
+### Säkerhetsriktlinjer
+
+1. **Aldrig dela API-nycklar**
+   - Distribueras inte via GitHub, Slack, email
+   - Delade genom Supabase dashboard access
+   - Google API-nycklar begränsas per domän
+
+2. **Row Level Security (RLS)**
+   - Aktiverat på alla databastabeller
+   - Publik läsning för de flesta tabeller
+   - Endast admins kan skriva/uppdatera/radera
+   - Verifiera RLS-policies innan databasändringar
+
+3. **API-nyckelrotation**
+   - Om en nyckel exponeras, regenereras den omedelbar
+   - Gamla nycklar blir invalid
+   - Uppdatera alla miljöer med ny nyckel
+
 ## Framtida Utveckling
 
 - Fortsatt integration av genetisk data
